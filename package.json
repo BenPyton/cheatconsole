@@ -1,0 +1,27 @@
+{
+  "name": "com.pyton.cheatconsole",
+  "version": "1.0.0",
+  "displayName": "Cheat Console",
+  "description": "Add easily a cheat console in your game to debug it with cheat methods.\n\n**Usage**\n Add a [Cheat] attribute above static methods you want to use as cheat, and create a cheat console in your scene (GameObject > ConsoleCommand).\n\n**Important**\nThe cheat console is available only in Unity editor and development build, but no code are generated in release build, so don't worry players can't enable it by modifying your game's assemblies with dnSpy for example.",
+  "unity": "2018.1",
+  "keywords": [
+    "cheat",
+    "cheatconsole",
+    "console",
+    "command"
+  ],
+  "author": {
+    "name": "Ben Pyton",
+    "url": "https://github.com/BenPyton"
+  },
+  "samples": [
+    {
+      "displayName": "Sample",
+      "description": "Simple scene with a cheat console and a test script",
+      "path": "Sample"
+    }
+  ],
+  "dependencies": {
+    "com.unity.ugui": "1.0.0"
+  }
+}
