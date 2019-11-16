@@ -20,8 +20,5 @@
       "description": "Simple scene with a cheat console and a test script",
       "path": "Sample"
     }
-  ],
-  "dependencies": {
-    "com.unity.ugui": "1.0.0"
-  }
+  ]
 }

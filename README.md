@@ -20,7 +20,7 @@ You can listen for `OnOpen` and `OnClose` events to execute specific code when t
 
 Example:
 ```
-pulbic class YourClass : MonoBehaviour
+public class YourClass : MonoBehaviour
 {
 	private void Start()
 	{
@@ -29,13 +29,13 @@ pulbic class YourClass : MonoBehaviour
 	}
 
 	[Cheat]
-	private static CheatMethod()
+	private static void CheatMethod()
 	{
 		CheatConsole.Log("Hello");
 	}
 	
 	[Cheat]
-	private static CheatMethodWithString(string str)
+	private static void CheatMethodWithString(string str)
 	{
 		CheatConsole.Log("Hello " + str);
 	}

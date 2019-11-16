@@ -103,6 +103,12 @@ public sealed class CheatConsole : MonoBehaviour
             m_cursorIndex = Mathf.Max(m_cursorIndex, 0);
             m_dirty = true;
         }
+        else if (Input.GetKeyDown(KeyCode.Delete)
+            && m_cursorIndex < m_inputCommand.Length)
+        {
+            m_inputCommand = m_inputCommand.Remove(m_cursorIndex, 1);
+            m_dirty = true;
+        }
         else
         {
             foreach (char c in Input.inputString)
