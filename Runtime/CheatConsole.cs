@@ -126,9 +126,9 @@ public sealed class CheatConsole : MonoBehaviour
             }
             else
             {
-                foreach (string method_name in matchingNames)
+                foreach (string methodName in matchingNames)
                 {
-                    Log($"[Suggestion] {method_name}");
+                    Log($"[Suggestion] {methodName}");
                 }
             }
         }
