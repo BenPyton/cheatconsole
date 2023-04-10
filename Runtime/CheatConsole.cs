@@ -143,11 +143,14 @@ public sealed class CheatConsole : MonoBehaviour
                     m_dirty = true;
                     break;
                 }
-                else if (c == '\b' && m_cursorIndex > 0)
+                else if (c == '\b')
                 {
-                    m_inputCommand = m_inputCommand.Remove(m_cursorIndex - 1, 1);
-                    m_cursorIndex--;
-                    m_dirty = true;
+                    if (m_cursorIndex > 0)
+                    {
+                        m_inputCommand = m_inputCommand.Remove(m_cursorIndex - 1, 1);
+                        m_cursorIndex--;
+                        m_dirty = true;
+                    }
                 }
                 else
                 {
