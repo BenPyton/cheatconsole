@@ -3,6 +3,7 @@
 #endif
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -109,6 +110,28 @@ public sealed class CheatConsole : MonoBehaviour
             m_inputCommand = m_inputCommand.Remove(m_cursorIndex, 1);
             m_dirty = true;
         }
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            string[] allMethodNames = CheatManager.GetAllMethodNames();
+            List<string> matchingNames = new(allMethodNames.Where(s => s.Contains(m_inputCommand, System.StringComparison.CurrentCultureIgnoreCase)));
+            if (matchingNames.Count == 0)
+            {
+                LogError($"No methods found that contain {m_inputCommand}");
+            }
+            else if (matchingNames.Count == 1)
+            {
+                m_inputCommand = matchingNames[0];
+                m_cursorIndex = m_inputCommand.Count();
+                m_dirty = true;
+            }
+            else
+            {
+                foreach (string method_name in matchingNames)
+                {
+                    Log($"[Suggestion] {method_name}");
+                }
+            }
+        }
         else
         {
             foreach (char c in Input.inputString)
@@ -210,7 +233,7 @@ public sealed class CheatConsole : MonoBehaviour
     private bool m_dirty = true;
     private bool m_consoleEnabled = false;
 #endif
-    
+
     [SerializeField] private GameObject m_container = null;
     [SerializeField] private Text m_inputText = null;
     [SerializeField] private Text m_outputText = null;
